@@ -25,10 +25,18 @@ answer = random.randint(1, 100)
 num_guesses = 1
 
 while True:
-    guess = int(input("Guess a number between 1 and 100: "))
+    guess = input("Guess a number between 1 and 100: ")
+
+    try:
+        guess = int(guess)
+    except:
+        print("please guess numbers only.")
+        continue
+
+
 
     if  guess < 1 or guess > 100:
-        print("please guess a number only between 1 and 100.")
+        print("please guess between 1 and 100.")
         continue
 
     elif guess == answer: 
